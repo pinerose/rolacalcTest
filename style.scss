@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+@mixin width-height($width, $height){
+    width: $width;
+    height: $height;
+}
+
+@mixin flex-display(){
+    display: flex;
+    flex-flow: row wrap;
+}
+
+* {
+    text-align: center;
+}
+
+li {
+    list-style: none;
+}
+
+body{
+    margin: 0;
+}
+
+#wrap{
+    background: aliceblue;
+    @include width-height(100%, 57rem);
+    @include flex-display();
+    justify-content: flex-end;
+    align-content: flex-start;
+
+    #character{
+        @include width-height(20%, 40%);
+        @include flex-display();
+
+        li {
+            @include width-height(100%, 14%);
+            line-height: 3rem;
+        }
+    }
+
+    #gameDisplay {
+        @include width-height(80%, 40%);
+        @include flex-display();
+
+        #status {
+            @include width-height(100%, 20%);
+            @include flex-display();
+            justify-content: space-around;
+             li {
+                @include width-height(11%, 50%);
+                input {
+                    @include width-height(90%, 50%);
+                }
+             }
+        }
+
+        #field {
+            @include width-height(100%, 80%);
+            @include flex-display();
+            justify-content: space-between;
+
+            #ally, #enemy{
+                @include width-height(45%, 100%);
+                @include flex-display();
+                justify-content: space-around;
+                align-content: space-around;
+
+                .rear, .center, .front {
+                    @include width-height(25%, 80%);
+                    @include flex-display();
+                    align-content: space-between;
+
+                    .stat {
+                        @include width-height(100%, 20%);
+                        background: skyblue;
+                    }
+
+                    .location{
+                        @include width-height(100%, 70%);
+                        background: lightblue;
+                    }
+                }
+            }
+        }
+    }
+
+    #skillSet {
+        @include width-height(80%, 50%);
+        @include flex-display();
+        align-content: flex-start;
+
+        #class {
+            @include width-height(100%, 15%);
+            @include flex-display();
+            justify-content: space-around;
+            background: paleturquoise;
+
+            li {
+                @include width-height(14%, 100%);
+            }
+        }
+
+        #skill {
+            @include width-height(100%, 60%);
+            background: whitesmoke;
+            overflow-y: scroll;
+        }
+    }
+}
