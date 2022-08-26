@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script async src="script.js"></script>
+    </head>
+    <body>
+        <div id="wrap">
+            <nav id="character">
+                <li onclick="char('Scarlet');">스칼렛</li>
+                <li onclick="char('Jade');">제이드</li>
+                <li onclick="char('Iris');">아이리스</li>
+                <li onclick="char('partner');">동료</li>
+                <li onclick="char('pet');">펫</li>
+                <li onclick="char('relic');">유물</li>
+                <li onclick="char('item');">아이템</li>
+            </nav>
+            <div id="gameDisplay">
+                <nav id="status">
+                    <li onclick="effect('AttackPoint');">공격력: <br><input type="text" placeholder="-5 이상"></li>
+                    <li onclick="effect('DefensePoint');">방어력: <br><input type="text" placeholder="-5 이상"></li>
+                    <li onclick="effect('AdditionalDamage');">연참: <br><input type="text" placeholder="0 이상"></li>
+                    <li onclick="effect('RouncAdded');">날카로움: <br><input type="text" placeholder="0 이상"></li>
+                    <li onclick="effect('AddedOnce');">집중: <br><input type="text" placeholder="0 이상"></li>
+                    <li onclick="effect('Enforced');">강화: <br><input type="text" placeholder="Y/N"></li>
+                    <li onclick="effect('Advanced');">상급 강화: <br><input type="text" placeholder="Y/N"></li>
+                    <li onclick="effect('Critical');">치명: <br><input type="text" placeholder="Y/N"></li>
+                    <!--
+                        <li onclick="effect('');"></li>
+                    -->
+                </nav>
+                <div id="field">
+                    <div id="ally">
+                        <div class="rear" onclick="location('allyRear');">
+                            <div class="stat"></div>
+                            <div class="location"></div>
+                        </div>
+                        <div class="center" onclick="location('allyCenter');">
+                            <div class="stat"></div>
+                            <div class="location"></div>
+                        </div>
+                        <div class="front" onclick="location('allyFront');">
+                            <div class="stat"></div>
+                            <div class="location"></div>
+                        </div>
+                    </div>
+                    <div id="enemy">
+                        <div class="rear" onclick="location('enemyRear');">
+                            <div class="stat"></div>
+                            <div class="location"></div>
+                        </div>
+                        <div class="center" onclick="location('enemyCenter');">
+                            <div class="stat"></div>
+                            <div class="location"></div>
+                        </div>
+                        <div class="front" onclick="location('enemyFront');">
+                            <div class="stat"></div>
+                            <div class="location"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="skillSet">
+                <nav id="class"></nav>
+                <div id="skill"></div>
+            </div>
+        </div>
+    </body>
+</html>
