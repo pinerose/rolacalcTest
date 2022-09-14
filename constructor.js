@@ -63,7 +63,7 @@ function Skill(SkillName, mindmg, maxdmg, counter, defence, cost){
  */
 
 const 횡베기 = new Skill("횡베기", 6, 10, null, null);
-횡베기.Desc = `적 전체에게 ${횡베기.mindmg} ~ ${횡베기.maxdmg}만큼의 피해를 입힙니다.`;
+횡베기.Desc = `적 전체에게 ${횡베기.mindmg} ~ ${횡베기.maxdmg}의 피해를 입힙니다.`;
 
 const 타오르는_투지 = new Skill("타오르는 투지", null, null, null, null);
 타오르는_투지.Desc = '적을 처치할 시 1의 행동력을 얻습니다.';
@@ -88,7 +88,67 @@ const 데들리_스트라이크 = new Skill("데들리 스트라이크", 48, 56,
 
 const 전투_회복 = new Skill("전투 회복", null, null, null, null);
 전투_회복.Desc = '전투 종료 시 최대 체력의 12%만큼의 생명력을 회복합니다.';
+
+const 악식 = new Skill("악식", 10, 14, null, null);
+악식.Desc = `단일 적 대상에게 ${악식.mindmg} ~ ${악식.maxdmg}의 피해를 입힙니다. 이 스킬로 적을 처치할 시 15의 생명력을 회복합니다.`;
+
+const 생존_기술 = new Skill("생존 기술", null, null, null, null);
+생존_기술.Desc = '전투 시작 시 1의 면역을 얻으며, 영구적으로 1의 공격력과 10의 최대 생명력을 얻습니다.';
+
+const 포식 = new Skill("포식", 12, 16, null, null);
+포식.Desc = `단일 적 대상에게 ${포식.mindmg} ~ ${포식.maxdmg}의 피해를 입힙니다. 이 스킬로 적을 처치할 경우 1의 sp를 얻습니다.`;
+
+const 공격 = new Skill("공격", 11, 13, null, null);
+공격.Desc = `단일 적 대상에게 ${공격.mindmg} ~ ${공격.maxdmg}의 피해를 입힙니다.`;
+
+const 더블_슬래시 = new Skill("더블 슬래시", 10, 16, null, null);
+더블_슬래시.Desc = `단일 적 대상에게 ${더블_슬래시.mindmg} ~ ${더블_슬래시.maxdmg}의 피해를 두 번 입힙니다.`;
+
+const 방어 = new Skill("방어", null, null, null, 8);
+방어.Desc = `스스로 ${방어.defence}의 방어도를 얻습니다.`;
+
 /** 나이트 스킬 */
 
+// const ;
+
+/** 랜서 스킬 */
+
+let distance = 0;
+
+const 트리플_스탭 = new Skill("트리플 스탭", 5, 9, null, null);
+트리플_스탭.Desc = `단일 적 대상에게 ${트리플_스탭.mindmg} ~ ${트리플_스탭.maxdmg}의 피해를 세 번 입힙니다. 더블 슬래시를 대체합니다.`;
+
+const 깊이_찌르기 = new Skill("깊이 찌르기", 16, 24, null, null);
+깊이_찌르기.Desc = `단일 적 대상에게 ${깊이_찌르기.mindmg} ~ ${깊이_찌르기.maxdmg}의 피해를 입히며, 바로 뒤 대상에게도 같은 피해를 입힙니다.`;
+
+const 준비_만전 = new Skill("준비 만전", null, null, null, null);
+준비_만전.Desc = '전투 시작 시 3의 연참을 얻습니다.';
+
+const 사우전드_드롭스 = new Skill("사우전드 드롭스", 16, 24, null, null);
+사우전드_드롭스.Desc = `적 전체에게 ${사우전드_드롭스.mindmg} ~ ${사우전드_드롭스.maxdmg}의 피해를 3번 입힙니다. 한 전투 당 한 번만 사용할 수 있습니다.`;
+
+const 전진_찌르기 = new Skill("전진 찌르기", 10, 14, null, 10);
+전진_찌르기.Desc = `앞으로 한 칸 이동한 후 단일 적 대상에게 ${전진_찌르기.mindmg} ~ ${전진_찌르기.maxdmg}의 피해를 입히며, 스스로 ${전진_찌르기.defence}의 방어도를 얻습니다.`;
+
+const 정면돌파 = new Skill("정면돌파", null, null, null, null);
+정면돌파.Desc = "전방으로 이동할 시 1의 강화를 얻습니다.";
+
+const 투창 = new Skill("투창", 6 + distance * 6, 8 + distance * 6, null, null);
+투창.Desc = `뒤로 한 칸 이동하며 단일 적 대상에게 ${투창.mindmg} ~ ${투창.maxdmg}의 피해를 입힙니다.`;
+
+const 아크로바틱 = new Skill("아크로바틱", null, null, null, 10);
+아크로바틱.Desc = `자신의 턴에 이동할 때마다 ${아크로바틱.defence}의 방어도를 얻습니다.`;
+
+const 회전_방어 = new Skill("회전 방어", null, null, null, 8 + AdditionalDamage);
+회전_방어.Desc = `스스로 ${회전_방어.defence}의 방어도를 얻습니다.`;
+
+const 발경 = new Skill("발경", 12, 18, null, null);
+발경.Desc = `맨 앞의 적에게 ${발경.mindmg} ~ ${발경.maxdmg}의 피해를 입힙니다. 반드시 치명타가 발생합니다.`;
+
+const 약점_강타 = new Skill("약점 강타", null, null, null, null);
+약점_강타.Desc = '치명타 발생 시 대상에게 1의 기절을 부여합니다.';
+
+const 혼신의_일격 = new Skill("혼신의 일격", 16 + additionalDamage * 5, 28 + additionalDamage * 5, null, null);
+혼신의_일격.Desc = `앞으로 한 칸 이동한 후 단일 적 대상에게 ${혼신의_일격.mindmg} ~ ${혼신의_일격.maxdmg}의 피해를 입힙니다.`;
 
 const Scarlet = new Char()
