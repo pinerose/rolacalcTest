@@ -19,6 +19,8 @@ function char(charType) {
                 var charClassImg = document.createElement("img");
                 charClassImg.src = `character/Scarlet/class/${x}.PNG`;
                 charClass.appendChild(charClassImg);
+                // charClass.onclick = displaySkill(x);
+                SELECTOR('#class').appendChild(charClass);
             }
             break;
         case character[1]:
